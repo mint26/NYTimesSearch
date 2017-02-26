@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">NYTimesArticleSearch</string>
+    <string name="hint">Enter search query</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="filter_begin_date_label">Begin Date</string>
+    <string name="filter_sort_order_label">Sort Order</string>
+    <string name="filter_news_desk_label">News Desk Value</string>
+    <string name="filter_news_desk_value_01">Arts</string>
+    <string name="filter_news_desk_value_02">Fashion &amp; style</string>
+    <string name="filter_news_desk_value_03">Sports</string>
+    <string name="filter_save_label">Save</string>
+
+
+    <string-array name="filter_sort_order">
+        <item>Oldest</item>
+        <item>Newest</item>
+    </string-array>
+</resources>

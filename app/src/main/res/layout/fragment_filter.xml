@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.when0matters.nytimesarticlesearch.fragments.FilterFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:text="@string/filter_begin_date_label"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_date_label"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="@dimen/filter_margin_gap"
+        android:layout_marginRight="@dimen/filter_margin_gap"
+        android:textSize="@dimen/filter_label_font_size" />
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/filter_margin_gap"
+        android:layout_marginRight="@dimen/filter_margin_gap"
+        android:id="@+id/dp_begin_date"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:layout_marginBottom="@dimen/filter_margin_gap" />
+
+    <TextView
+        android:text="@string/filter_sort_order_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/filter_margin_gap"
+        android:layout_marginRight="@dimen/filter_margin_gap"
+        android:layout_gravity="center"
+        android:id="@+id/textView2"
+        android:textSize="@dimen/filter_label_font_size" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/filter_margin_gap"
+        android:layout_marginRight="@dimen/filter_margin_gap"
+        android:layout_gravity="center"
+        android:id="@+id/spinner_sort_order"
+        android:layout_marginBottom="@dimen/filter_margin_gap" />
+
+    <TextView
+        android:text="@string/filter_news_desk_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/filter_margin_gap"
+        android:layout_marginRight="@dimen/filter_margin_gap"
+        android:layout_gravity="center"
+        android:id="@+id/tv_news_desk"
+        android:gravity="center"
+        android:textSize="@dimen/filter_label_font_size" />
+
+    <CheckBox
+        android:text="@string/filter_news_desk_value_01"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/filter_margin_gap"
+        android:layout_marginRight="@dimen/filter_margin_gap"
+        android:id="@+id/cb_arts"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="@dimen/filter_checkbox_width" />
+
+    <CheckBox
+        android:text="@string/filter_news_desk_value_02"
+        android:layout_width="@dimen/filter_checkbox_width"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/filter_margin_gap"
+        android:layout_marginRight="@dimen/filter_margin_gap"
+        android:id="@+id/cb_fashion_style"
+        android:layout_gravity="center_horizontal" />
+
+    <CheckBox
+        android:text="@string/filter_news_desk_value_03"
+        android:layout_width="@dimen/filter_checkbox_width"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/filter_margin_gap"
+        android:layout_marginRight="@dimen/filter_margin_gap"
+        android:id="@+id/cb_sports"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:text="@string/filter_save_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/filter_margin_gap"
+        android:padding="10dp"
+        android:id="@+id/btn_save"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorText"/>
+</LinearLayout>
