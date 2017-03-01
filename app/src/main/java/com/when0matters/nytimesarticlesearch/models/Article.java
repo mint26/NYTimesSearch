@@ -1,5 +1,7 @@
 package com.when0matters.nytimesarticlesearch.models;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,6 +19,8 @@ public class Article implements Serializable {
     String webUrl;
     String headline;
     String thumbnail;
+    String lead_paragraph;
+    String news_desk;
 
 
     public String getWebUrl() {
@@ -31,11 +35,17 @@ public class Article implements Serializable {
         return thumbnail;
     }
 
+    public String getLead_paragraph(){  return lead_paragraph; }
+
+    public String getNews_desk() { return news_desk.equalsIgnoreCase("null")? "N.A": news_desk; }
+
     public Article(JSONObject jsonObject){
         try{
+            Log.d("Debug", jsonObject.toString());
             this.webUrl = jsonObject.getString("web_url");
             this.headline = jsonObject.getJSONObject("headline").getString("main");
-
+            this.lead_paragraph = jsonObject.getString("lead_paragraph");
+            this.news_desk = jsonObject.getString("news_desk");
             JSONArray multimedia = jsonObject.getJSONArray("multimedia");
 
             if (multimedia.length() > 0){

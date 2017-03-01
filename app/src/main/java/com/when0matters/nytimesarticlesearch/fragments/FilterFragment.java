@@ -15,8 +15,10 @@ import android.widget.TextView;
 
 import com.when0matters.nytimesarticlesearch.R;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -40,6 +42,7 @@ public class FilterFragment extends AppCompatDialogFragment implements TextView.
     @BindView(R.id.dp_begin_date)
     DatePicker dp_begin_date;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,6 +56,27 @@ public class FilterFragment extends AppCompatDialogFragment implements TextView.
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_sort_order.setAdapter(adapter);
+
+        Bundle bundle = this.getArguments();
+
+        cb_sports.setChecked(bundle.getBoolean("isSports"));
+        cb_fashion_style.setChecked(bundle.getBoolean("isFashionStyle"));
+        cb_arts.setChecked(bundle.getBoolean("isArts"));
+        if (bundle.getString("sortOrder") != null){
+            int pos = adapter.getPosition(bundle.getString("sortOrder"));
+            spinner_sort_order.setSelection(pos);
+        }
+
+        if (bundle.getString("beginDate") != null) {
+            try {
+                SimpleDateFormat sdf_default = new SimpleDateFormat("yyyyMMdd");
+                Date date = sdf_default.parse(bundle.getString("beginDate"));
+                Calendar cal = Calendar.getInstance();
+                cal.setTimeInMillis(date.getTime());
+                dp_begin_date.updateDate(cal.get(Calendar.YEAR),cal.get(Calendar.MONTH),cal.get(Calendar.DAY_OF_MONTH));
+            } catch (ParseException ex) {
+            }
+        }
         return view;
     }
 

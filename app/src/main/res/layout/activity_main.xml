@@ -20,14 +20,20 @@
         app:collapseIcon="@drawable/ic_action_up"
         app:titleTextColor="@color/colorText"/>
 
-
-    <GridView
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
-        android:id="@+id/gv_result"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:numColumns="3" />
+        android:id="@+id/swl_container"
+        android:layout_below="@id/toolbar">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="@dimen/recycler_view_padding"
+            android:id="@+id/rv_result" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </RelativeLayout>
